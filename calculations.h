@@ -1,0 +1,60 @@
+#ifndef CALCULATIONS_H
+#define CALCULATIONS_H
+
+#include <iostream>
+#include <math.h>
+#include <vector>
+
+using namespace std;
+
+double weight_to_kg(double &weight) {
+    return round( (weight * 0.453592) * 100) / 100; 
+}
+
+double height_to_cm(int &feet, double &inches) {
+    return ((feet * 12) + inches)*2.54;
+}
+
+int total_calories_consumed(vector<int> &calories) {
+    int total = 0;
+    if (calories.empty()) { return -1; }
+    for (int &index : calories) { total += index; }
+    return total;
+}
+
+double bmr_calc_male(double &weight, int &height_feet, double &height_inches, int &age) {
+    int bmr = (10 * weight_to_kg(weight)) + (6.25 * height_to_cm(height_feet, height_inches)) - (5 * age) + 5;
+    return bmr;
+}
+double bmr_calc_female(double &weight, int &height_feet, double &height_inches, int &age) {
+    int bmr = (10 * weight_to_kg(weight)) + (6.25 * height_to_cm(height_feet, height_inches)) - (5 * age) - 16;
+    return bmr;
+}
+
+double calorie_goal(int &scale) {
+    double activity = 0;
+
+    if (scale == 1) {
+        activity *= 1.2;
+    } else if (scale == 2) {
+        activity *= 1.375;
+    } else if (scale == 3) {
+        activity *= 1.55;
+    } else if (scale == 4) {
+        activity *= 1.725;
+    } else if (scale == 5) {
+        activity *= 1.9;
+    }
+
+    return (calorie_goal);
+}
+
+
+
+char gender(char female, char male){
+    if 
+    else 
+    return 
+}
+
+#endif
