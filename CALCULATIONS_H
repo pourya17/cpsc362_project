@@ -4,7 +4,7 @@
 #include <iostream>
 #include <math.h>
 #include <vector>
-awdada
+
 using namespace std;
 
 double weight_to_kg(double &weight) {
