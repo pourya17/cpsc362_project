@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "json.hpp" 
+#include "calculations.h"
 
 using json = nlohmann::json;
 using namespace std;
@@ -41,7 +42,10 @@ public:
         loadReminders();
     }
 
-    void checkCalorieIntake(double caloriesConsumed, double calorieGoal) {
+    void checkCalorieIntake(int calorieGoal) {
+        vector<int> calories = {500, 600, 700}; // Example values, replace with actual logic
+        int caloriesConsumed = total_calories_consumed(calories);
+
         if (caloriesConsumed > calorieGoal) {
             cout << getRandomReminder("manyCalorieWarnings") << endl;
         } else if (caloriesConsumed < calorieGoal) {
@@ -58,7 +62,16 @@ public:
             cout << getRandomReminder("weightLossWarnings") << endl;
         } else {
             cout << "Your weight is stable. Keep maintaining your lifestyle." << endl;
+        } 
+    }
+
+    void randomReminders(int startHour){
+        time_t now = time(nullptr);
+        tm *localTime = localtime(&now);
+        int currentHour = localTime -> tm_hour;
+        if (currentHour == startHour){
         }
+
     }
 };
 
