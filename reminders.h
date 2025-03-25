@@ -68,8 +68,8 @@ public:
         tm *localTime = localtime(&now);
         int currentHour = localTime -> tm_hour;
         if (currentHour == startHour){
-            
         }
+        // for 
     }
 };
 

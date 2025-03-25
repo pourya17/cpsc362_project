@@ -1,6 +1,7 @@
 #include <iostream>
 #include "calculations.h"
 #include "entries.h"
+#include "reminders.h"
 #include <string>
 
 double weight = 0;
@@ -45,9 +46,7 @@ int main() {
        std::cout << "Protein: " << protein << "g" << std::endl;
        std::cout << "Carbs: " << carbs << "g" << std::endl;
        std::cout << "Fats: " << fats << "g" << std::endl;
-    }     
-
-    Entry entry("Cereal", 200);
+    }
 
    // cout << height << weight_kg;
     return 0;

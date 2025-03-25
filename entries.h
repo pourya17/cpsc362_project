@@ -8,9 +8,10 @@
 // Ex: You ate cereal, so you add a new entry with the quantity, calories, etc
 
 struct Entry_Type {
-  string food_name;
+  std::string food_name;
   int id = 100000;
-  int calories;
+  int calories, potassium, sodium, fiber, sugars,
+  protein, vitaminA, vitaminC, calcium, iron;
 };
 
 class Entry {
@@ -20,7 +21,7 @@ class Entry {
       void deleteEntry(Entry_Type entry);
       void displayEntries() const;
     //  Entry getEntry();
-      vector<Entry_Type> entries;
+      std::vector<Entry_Type> entries;
 
 };
 
