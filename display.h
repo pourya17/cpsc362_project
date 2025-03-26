@@ -16,4 +16,8 @@ void display_total_calories(int &total) {
     cout << total << " calories" << endl;
 }
 
+<<<<<<< HEAD
 #endif
+=======
+#endif
+>>>>>>> 1232889aa7320af528fdac13077c128be215a6e9
