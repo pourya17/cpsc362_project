@@ -4,16 +4,17 @@
 #include "reminders.h"
 #include <string>
 
-double weight = 0;
-double height = 0;
+using namespace std;
+
+
 
 int main() {
     float height, inches;
     int feet;
     float weight, weight_kg;
-    double protein, fats, carbs, calorieUpper, calorieLower, proteinLower, proteinUpper, carbLower, carbUpper, fatLower, fatUpper;
+    double protein, fats, carbs, baseCalories, adjustedCalories, calorieUpper, calorieLower, proteinLower, proteinUpper, carbLower, carbUpper, fatLower, fatUpper, fatCalories, proteinCalories, carbCalories;
     int activityLevel, age;
-    char gender;
+    char gender, fitnessGoal;
 
     // User Input
     std::cout << "Enter your weight (lbs): ";
@@ -31,23 +32,29 @@ int main() {
     std::cout << "\n4. Very active (hard exercise 6-7 days per week)";
     std::cout << "\n5. Super active (very intense exercise daily)\n";
     std::cin >> activityLevel;
+
+   //convert weight and height to metric
     weight_kg = weight_to_kg(weight);
     height = height_to_cm(feet, inches);
+
     // Calculate BMR and Caloric Needs for Weight Maintenance 
        double bmr = bmr_calc(weight_kg, height, gender, age);
        double calories = calculateCalories(bmr, activityLevel);
        void calculateMacros(double calories, double &protein, double &carbs, double &fats); //calc prot carb fat
        void calculateRanges(double calories, double &protein, double &carbs, double &fats); //calc ranges of each macro
+       void inputMacroBreakdown(double totalCalories); //ask for custom goals
+ //goal
+    double adjustCalories(double baseCalories);
 
     if (calories == -1) {
         cout << "Invalid activity level entered." << endl;
     } else {
-       std::cout << "Your estimated daily nutritional needs: \n" << "Calories:" << calories << " kcal" << std::endl;
-       std::cout << "Protein: " << protein << "g" << std::endl;
-       std::cout << "Carbs: " << carbs << "g" << std::endl;
-       std::cout << "Fats: " << fats << "g" << std::endl;
+       std::cout << "Your estimated daily nutritional needs:\n"; 
+       std::cout << "Calories:" << calories << " kcal\n";
+       std::cout << "Protein: " << protein << " g\n";
+       std::cout << "Carbs: " << carbs << " g\n";
+       std::cout << "Fats: " << fats << " g\n";
     }
 
-   // cout << height << weight_kg;
     return 0;
 }

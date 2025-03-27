@@ -43,10 +43,75 @@ double calculateCalories(double &bmr, int &activityLevel) {
     return bmr * activityMultipliers[activityLevel - 1];
 }
 
+//default macro breakdown
 void calculateMacros(double calories){
     double protein = calories * .4;
     double carbs = calories * .3;
     double fats = calories * .3;
+}
+//custom macro breakdown
+void inputMacroBreakdown(double totalCalories) {
+    double fatPercent, carbPercent, proteinPercent;
+
+    // Get macronutrient percentages from the user
+    cout << "Enter fat percentage (%): ";
+    cin >> fatPercent;
+    cout << "Enter carbohydrate percentage (%): ";
+    cin >> carbPercent;
+    cout << "Enter protein percentage (%): ";
+    cin >> proteinPercent;
+
+    // Validate that percentages add up to 100
+    double totalPercent = fatPercent + carbPercent + proteinPercent;
+    if (totalPercent != 100) {
+        cout << "Error: Percentages must add up to 100%. Please try again." << endl;
+        return;
+    }
+    
+    double fatGrams = fatCalories / 9;
+    double carbGrams = carbCalories / 4;
+    double proteinGrams = proteinCalories / 4;
+ 
+    //fitness goal
+    double adjustCalories(double baseCalories) {
+    int choice;
+    double adjustedCalories = baseCalories;
+
+    cout << "\nWhat is your fitness goal?\n";
+    cout << "1. Mild Weight Loss (-0.5 lb/week)\n";
+    cout << "2. Weight Loss (-1 lb/week)\n";
+    cout << "3. Maintain Weight\n";
+    cout << "4. Mild Weight Gain (+0.5 lb/week)\n";
+    cout << "5. Weight Gain (+1 lb/week)\n";
+    cout << "Enter your choice (1-5): ";
+    cin >> choice;
+
+    switch (choice) {
+        case 1:
+            adjustedCalories = baseCalories * 0.91;
+            cout << "Calorie intake adjusted for mild weight loss: " << adjustedCalories << " kcal" << endl;
+            break;
+        case 2:
+            adjustedCalories = baseCalories * 0.81;
+            cout << "Calorie intake adjusted for weight loss: " << adjustedCalories << " kcal" << endl;
+            break;
+        case 3:
+            cout << "Calorie intake remains the same: " << adjustedCalories << " kcal" << endl;
+            break;
+        case 4:
+            adjustedCalories = baseCalories * 1.09;
+            cout << "Calorie intake adjusted for mild weight gain: " << adjustedCalories << " kcal" << endl;
+            break;
+        case 5:
+            adjustedCalories = baseCalories * 1.19;
+            cout << "Calorie intake adjusted for weight gain: " << adjustedCalories << " kcal" << endl;
+            break;
+        default:
+            cout << "Invalid choice. Maintaining current calorie intake." << endl;
+            break;
+    }
+
+    return adjustedCalories;
 }
 
 void calculateRanges(double calories, double &protein, double &carbs, double &fats) {
