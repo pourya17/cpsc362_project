@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\proximanova_black.ttf" />
+    <None Remove="Fonts\proximanova_bold.otf" />
+    <None Remove="Fonts\proximanova_regular.ttf" />
+    <None Remove="Resources\burnedBackground.png" />
+    <None Remove="Resources\consumedBackground.png" />
+    <None Remove="Resources\entries_button.png" />
+    <None Remove="Resources\home_Button.png" />
+    <None Remove="Resources\profile_Button.png" />
+    <None Remove="Resources\test.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\burnedBackground.png" />
+    <Resource Include="Resources\consumedBackground.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\proximanova_black.ttf" />
+    <Resource Include="Fonts\proximanova_bold.otf" />
+    <Resource Include="Fonts\proximanova_regular.ttf" />
+    <Resource Include="Resources\entries_button.png" />
+    <Resource Include="Resources\home_Button.png" />
+    <Resource Include="Resources\profile_Button.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

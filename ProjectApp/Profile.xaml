@@ -1,0 +1,391 @@
+﻿<Window x:Class="ProjectApp.Profile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectApp"
+        mc:Ignorable="d"
+        Title="Profile" 
+        Width="{x:Static SystemParameters.PrimaryScreenWidth}"  
+        Height="{x:Static SystemParameters.PrimaryScreenHeight}">
+
+    <Grid x:Name="ProfileGrid" Background="#00121e">
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+
+
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Text="// Personal Data //"
+            Foreground="#c0cad4"
+            FontFamily="/Fonts/#Proxima Nova"
+            FontSize="30"
+            FontWeight="Bold"
+            TextAlignment="Center"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="30, 50, 0, 0"
+            />
+
+        <Border
+            Height="90"
+            Width="700"
+            CornerRadius="10"
+           
+            Background="{x:Null}"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="140, 120, 0, 0"
+            
+            >
+
+
+            <StackPanel
+             Width="700"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Orientation="Horizontal"
+            Margin="0, 0, 0, 0">
+
+                <TextBlock
+             Width="100"
+             Text="Gender"
+             FontSize="26"
+             Foreground="#c0cad4"
+             HorizontalAlignment="Center"
+             Margin="20, 10, 200, 0"
+             TextAlignment="Left"
+             FontFamily="/Fonts/#Proxima Nova"
+                />
+
+                <ComboBox
+                    Name="GenderBox"
+                    Width="90"
+                    IsEditable="True"
+                    IsReadOnly="True"
+                    Background="Black"
+                    
+                    
+                    
+                    >
+                    <ComboBoxItem Content="Male"/>
+                    <ComboBoxItem Content="Female"/>
+
+                </ComboBox>
+
+
+            </StackPanel>
+
+        </Border>
+
+        <Border
+            Height="90"
+            Width="700"
+            CornerRadius="10"
+           
+            Background="{x:Null}"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="140, 210, 0, 0"
+            
+            >
+
+
+            <StackPanel
+             Width="700"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Orientation="Horizontal"
+            Margin="0, 0, 0, 0">
+
+                <TextBlock
+             Width="100"
+             Text="Age"
+             FontSize="26"
+             Foreground="#c0cad4"
+             HorizontalAlignment="Center"
+             Margin="20, 10, 200, 0"
+             TextAlignment="Left"
+             FontFamily="/Fonts/#Proxima Nova"
+                />
+
+                <TextBox
+                    Template="{StaticResource DataBox}"
+                    Foreground="#c0cad4"
+                    Width="90"
+                    FontSize="20"
+                    BorderThickness="1"
+                    Background="#0e1f29"
+                    TextAlignment="Center"
+                    BorderBrush="#c0cad4"
+                    />
+
+            </StackPanel>
+
+        </Border>
+
+        <Border
+            Height="90"
+            Width="700"
+            CornerRadius="10"
+           
+            Background="{x:Null}"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="140,305,0,0"
+            
+            >
+
+
+            <StackPanel
+             Width="700"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Orientation="Horizontal"
+            Margin="0, 0, 0, 0">
+
+                <TextBlock
+             Width="100"
+             Text="Height"
+             FontSize="26"
+             Foreground="#c0cad4"
+             HorizontalAlignment="Center"
+             Margin="20, 10, 200, 0"
+             TextAlignment="Left"
+             FontFamily="/Fonts/#Proxima Nova"
+                />
+
+                <TextBox
+                    Template="{StaticResource DataBox}"
+                    Foreground="#c0cad4"
+                    Width="90"
+                    FontSize="20"
+                    BorderThickness="1"
+                    Background="#0e1f29"
+                    TextAlignment="Center"
+                    BorderBrush="#c0cad4"
+                    />
+
+                <TextBlock
+             Width="50"
+             Text="ft"
+             FontSize="26"
+             Foreground="#c0cad4"
+             HorizontalAlignment="Center"
+             Margin="20, 10, 0, 0"
+             TextAlignment="Left"
+             FontFamily="/Fonts/#Proxima Nova"
+                />
+
+
+
+                <TextBox
+                    Template="{StaticResource DataBox}"
+                    Foreground="#c0cad4"
+                    Width="90"
+                    FontSize="20"
+                    TextAlignment="Center"
+                    BorderThickness="1"
+                    Background="#0e1f29"
+                    BorderBrush="#c0cad4"
+                    />
+
+                <TextBlock
+             Width="50"
+             Text="in"
+             FontSize="26"
+             Foreground="#c0cad4"
+             HorizontalAlignment="Center"
+             Margin="20, 10, 0, 0"
+             TextAlignment="Left"
+             FontFamily="/Fonts/#Proxima Nova"
+                />
+
+
+            </StackPanel>
+
+        </Border>
+
+
+        <Border
+            Height="90"
+            Width="700"
+            CornerRadius="10"
+           
+            Background="{x:Null}"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="140,395,0,0"
+            
+            >
+
+
+            <StackPanel
+             Width="700"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Orientation="Horizontal"
+            Margin="0, 0, 0, 0">
+
+                <TextBlock
+             Width="100"
+             Text="Weight"
+             FontSize="26"
+             Foreground="#c0cad4"
+             HorizontalAlignment="Center"
+             Margin="20, 10, 200, 0"
+             TextAlignment="Left"
+             FontFamily="/Fonts/#Proxima Nova"
+                />
+
+                <TextBox
+                    Template="{StaticResource DataBox}"
+                    Foreground="#c0cad4"
+                    Width="90"
+                    FontSize="20"
+                    TextAlignment="Center"
+                    BorderThickness="1"
+                    Background="#0e1f29"
+                    BorderBrush="#c0cad4"
+                    />
+
+                <TextBlock
+             Width="50"
+             Text="lbs"
+             FontSize="26"
+             Foreground="#c0cad4"
+             HorizontalAlignment="Center"
+             Margin="20, 10, 0, 0"
+             TextAlignment="Left"
+             FontFamily="/Fonts/#Proxima Nova"
+                />
+
+
+            </StackPanel>
+
+        </Border>
+
+        <Border
+            Height="90"
+            Width="700"
+            CornerRadius="10"
+           
+            Background="{x:Null}"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="140,485,0,0"
+            
+            >
+
+
+            <StackPanel
+             Width="700"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Orientation="Horizontal"
+            Margin="0, 0, 0, 0">
+
+                <TextBlock
+             Width="150"
+             Text="Activity Level"
+             FontSize="26"
+             Foreground="#c0cad4"
+             HorizontalAlignment="Center"
+             Margin="20, 10, 150, 0"
+             TextAlignment="Left"
+             FontFamily="/Fonts/#Proxima Nova"
+                />
+
+                <ComboBox
+                    Name="ActivityBox"
+                    Width="150"
+                    IsEditable="True"
+                    IsReadOnly="True"
+                    >
+                    <ComboBoxItem Content="1. Sedentary"/>
+                    <ComboBoxItem Content="2. Light"/>
+                    <ComboBoxItem Content="3. Moderate"/>
+                    <ComboBoxItem Content="4. Very"/>
+                    <ComboBoxItem Content="5. Super"/>
+
+                </ComboBox>
+
+
+            </StackPanel>
+
+        </Border>
+
+        <Border
+            Height="90"
+            Width="700"
+            CornerRadius="10"
+           
+            Background="{x:Null}"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="140,575,0,0"
+            
+            >
+
+
+            <StackPanel
+             Width="700"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Orientation="Horizontal"
+            Margin="0, 0, 0, 0">
+
+                <TextBlock
+             Width="150"
+             Text="Goal (Weight)"
+             FontSize="26"
+             Foreground="#c0cad4"
+             HorizontalAlignment="Center"
+             Margin="20, 10, 150, 0"
+             TextAlignment="Left"
+             FontFamily="/Fonts/#Proxima Nova"
+                />
+
+                <ComboBox
+                    Name="GoalBox"
+                    Width="150"
+                    IsEditable="True"
+                    IsReadOnly="True"
+                    >
+                    <ComboBoxItem Content="Lose"/>
+                    <ComboBoxItem Content="Maintain"/>
+                    <ComboBoxItem Content="Gain"/>
+
+                </ComboBox>
+
+            </StackPanel>
+
+        </Border>
+
+    </Grid>
+</Window>
