@@ -83,6 +83,7 @@
                   HorizontalAlignment="Center"
                   Margin="0, 0, 90, 0"
                   VerticalAlignment="Center"
+                  Click="Entries_Button_Click"
                 >
 
                     <Image Source="/Resources/entries_button.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>

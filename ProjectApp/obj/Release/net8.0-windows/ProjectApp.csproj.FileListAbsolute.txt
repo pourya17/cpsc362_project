@@ -49,3 +49,6 @@ C:\Users\Duckie\Downloads\ProjectApp\ProjectApp\ProjectApp\obj\Release\net8.0-wi
 C:\Users\Duckie\Downloads\ProjectApp\ProjectApp\ProjectApp\obj\Release\net8.0-windows\ref\ProjectApp.dll
 C:\Users\Duckie\Downloads\ProjectApp\ProjectApp\ProjectApp\obj\Release\net8.0-windows\FoodEntry.baml
 C:\Users\Duckie\Downloads\ProjectApp\ProjectApp\ProjectApp\obj\Release\net8.0-windows\FoodEntry.g.cs
+C:\Users\Duckie\Downloads\ProjectApp\ProjectApp\ProjectApp\obj\Release\net8.0-windows\ProjectApp.sourcelink.json
+C:\Users\Duckie\Downloads\ProjectApp\ProjectApp\ProjectApp\obj\Release\net8.0-windows\SummaryWindow.baml
+C:\Users\Duckie\Downloads\ProjectApp\ProjectApp\ProjectApp\obj\Release\net8.0-windows\SummaryWindow.g.cs
