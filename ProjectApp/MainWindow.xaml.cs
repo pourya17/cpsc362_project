@@ -34,7 +34,7 @@ namespace ProjectApp
 
         private void Entries_Button_Click(object sender, RoutedEventArgs e)
         {
-            FoodEntry foodEntryWindow = new FoodEntry();
+            FoodEntryWindow foodEntryWindow = new FoodEntryWindow();
             foodEntryWindow.Show();
         }
         private void LoadEntryItems()

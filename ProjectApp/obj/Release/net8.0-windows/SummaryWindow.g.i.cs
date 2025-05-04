@@ -60,7 +60,7 @@ namespace ProjectApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ProjectApp;V1.0.0.0;component/summarywindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ProjectApp;component/summarywindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\SummaryWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

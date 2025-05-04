@@ -39,7 +39,7 @@
                />
         <!--Text="{Binding , StringFormat={}{0:ddd, MMMM dd}}"-->
         <TextBlock 
-                  Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat={}{0:ddd MMM dd, yyyy}}"
+                  Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat={}{0:ddd MMM dd\, yyyy}}"
                   Margin="20,41,0,885"
                   Grid.Row="0"
                   Grid.Column="0"
