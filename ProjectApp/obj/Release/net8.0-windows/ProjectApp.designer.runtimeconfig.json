@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Duckie\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Duckie\\.nuget\\packages",
+      "C:\\Users\\jontp\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\jontp\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

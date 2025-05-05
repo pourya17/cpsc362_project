@@ -13,6 +13,9 @@
     <Compile Update="Profile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="RecentEntriesWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="SummaryWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

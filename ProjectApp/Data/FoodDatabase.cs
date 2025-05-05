@@ -16,6 +16,34 @@ namespace ProjectApp.Data
                 InitializeDatabase();
         }
 
+        public List<FoodEntry> GetAllEntries()
+        {
+            var entries = new List<FoodEntry>();
+
+            using (var conn = new SQLiteConnection(ConnectionString))
+            {
+                conn.Open();
+                string sql = "SELECT Name, Calories, Protein, Fat, Carbs, Date FROM FoodEntry";
+                using var cmd = new SQLiteCommand(sql, conn);
+                using var reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    entries.Add(new FoodEntry
+                    {
+                        Name = reader.GetString(0),
+                        Calories = reader.GetInt32(1),
+                        Protein = reader.GetInt32(2),
+                        Fat = reader.GetInt32(3),
+                        Carbs = reader.GetInt32(4),
+                        Date = DateTime.Parse(reader.GetString(5))
+                    });
+                }
+            }
+
+            return entries;
+        }
+
         private void InitializeDatabase()
         {
             using (var conn = new SQLiteConnection(ConnectionString))

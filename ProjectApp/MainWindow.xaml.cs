@@ -37,6 +37,16 @@ namespace ProjectApp
             FoodEntryWindow foodEntryWindow = new FoodEntryWindow();
             foodEntryWindow.Show();
         }
+        private void ViewRecentEntries_Button_Click(object sender, RoutedEventArgs e)
+        {
+            RecentEntriesWindow recentWindow = new RecentEntriesWindow();
+            recentWindow.ShowDialog();
+        }
+        private void Home_Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+        }
+
         private void LoadEntryItems()
         {
 

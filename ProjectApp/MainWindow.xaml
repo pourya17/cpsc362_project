@@ -52,7 +52,7 @@
 
         <Border
             Height="60"
-            Width="350"
+            Width="406"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Grid.Column="1"
@@ -62,47 +62,38 @@
 
 
             <StackPanel
-            Width="320"
-            Orientation="Horizontal"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center">
-                <Button 
-                  x:Name="Home_Button"
-                  Margin="15, 0, 90, 0"
-                  HorizontalAlignment="Center"
-                  VerticalAlignment="Center"
-                  Style="{StaticResource MainButton}"
-                >
-                    <Image Source="/Resources/home_Button.png"/>
+    Orientation="Horizontal"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center">
 
-                </Button>
+    <Button x:Name="Home_Button"
+            Style="{StaticResource MainButton}"
+            Margin="10,0"
+            Click="Home_Button_Click">
+        <Image Source="/Resources/home_Button.png" Height="48" Width="59"/>
+    </Button>
 
-                <Button 
-                  x:Name="Entries_Button"
-                  Style="{StaticResource MainButton}"
-                  HorizontalAlignment="Center"
-                  Margin="0, 0, 90, 0"
-                  VerticalAlignment="Center"
-                  Click="Entries_Button_Click"
-                >
+    <Button x:Name="Entries_Button"
+            Style="{StaticResource MainButton}"
+            Margin="10,0"
+            Click="Entries_Button_Click">
+        <Image Source="/Resources/entries_button.png" Height="48" Width="59"/>
+    </Button>
 
-                    <Image Source="/Resources/entries_button.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Button x:Name="RecentEntries_Button"
+            Style="{StaticResource MainButton}"
+            Margin="10,0"
+            Click="ViewRecentEntries_Button_Click">
+        <Image Source="/Resources/recent_entries_button.png" Height="48" Width="59"/>
+    </Button>
 
-                </Button>
-
-                <Button 
-                  x:Name="Profile_Button"
-                  Style="{StaticResource MainButton}"
-                  HorizontalAlignment="Center"
-                  VerticalAlignment="Center"
-                  Click="Profile_Button_Click"
-                >
-
-                    <Image Source="/Resources/profile_button.png"/>
-
-                </Button>
-
-            </StackPanel>
+    <Button x:Name="Profile_Button"
+            Style="{StaticResource MainButton}"
+            Margin="10,0"
+            Click="Profile_Button_Click">
+        <Image Source="/Resources/profile_button.png" Height="48" Width="59"/>
+    </Button>
+</StackPanel>
 
         </Border>
 

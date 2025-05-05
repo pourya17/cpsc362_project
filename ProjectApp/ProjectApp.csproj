@@ -17,6 +17,7 @@
     <None Remove="Resources\entries_button.png" />
     <None Remove="Resources\home_Button.png" />
     <None Remove="Resources\profile_Button.png" />
+    <None Remove="Resources\recent_entries_button.png" />
     <None Remove="Resources\test.png" />
   </ItemGroup>
 
@@ -32,6 +33,9 @@
     <Resource Include="Resources\entries_button.png" />
     <Resource Include="Resources\home_Button.png" />
     <Resource Include="Resources\profile_Button.png" />
+    <Resource Include="Resources\recent_entries_button.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
