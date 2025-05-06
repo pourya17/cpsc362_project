@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DataTemplate x:Key="FoodEntryItemTemplate">
+        <Border Background="#1a2d3a" 
+                CornerRadius="8" 
+                Margin="10,5" 
+                Padding="15,10" 
+                Width="340">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="{Binding Name}" 
+                               FontSize="18" 
+                               FontWeight="SemiBold" 
+                               Foreground="#e0eaf2"/>
+                    <TextBlock Text="{Binding Date, StringFormat='ddd, MMM dd'}" 
+                               FontSize="12" 
+                               Foreground="#8a9eac" 
+                               Margin="0,2,0,0"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Calories}" 
+                               FontSize="18" 
+                               FontWeight="Bold" 
+                               Foreground="#e0eaf2"/>
+                    <TextBlock Text=" cal" 
+                               FontSize="14" 
+                               Foreground="#8a9eac" 
+                               VerticalAlignment="Bottom" 
+                               Margin="0,0,0,1"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+
+</ResourceDictionary>

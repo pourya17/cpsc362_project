@@ -78,5 +78,36 @@ namespace ProjectApp.Data
                 cmd.ExecuteNonQuery();
             }
         }
+        //Gets the last 3 entries for the home page
+        public List<FoodEntry> GetRecentEntries(int count = 3)
+        {
+            var entries = new List<FoodEntry>();
+
+            using (var conn = new SQLiteConnection(ConnectionString))
+            {
+                conn.Open();
+                string sql = "SELECT Id, Name, Calories, Protein, Fat, Carbs, Date FROM FoodEntry ORDER BY Date DESC LIMIT @Count";
+
+                using var cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Count", count);
+
+                using var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    entries.Add(new FoodEntry
+                    {
+                        Id = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        Calories = reader.GetInt32(2),
+                        Protein = reader.GetInt32(3),
+                        Fat = reader.GetInt32(4),
+                        Carbs = reader.GetInt32(5),
+                        Date = DateTime.Parse(reader.GetString(6))
+                    });
+                }
+            }
+
+            return entries;
+        }
     }
 }

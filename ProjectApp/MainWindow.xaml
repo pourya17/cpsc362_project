@@ -13,9 +13,9 @@
     <Grid x:Name="MainGrid" Background="#00121e">
         <Grid.ColumnDefinitions>
 
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="0"/>
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -25,18 +25,7 @@
             <RowDefinition Height="Auto"/>
 
 
-        </Grid.RowDefinitions>
-        <TextBlock 
-                 Text= "Today,"
-                 Margin="10,10,0,10" 
-                 FontSize="26"
-                 Foreground="White"
-                 Grid.Row="0"
-                 Grid.Column="0"
-                 HorizontalAlignment="Left" 
-                 FontFamily="/Fonts/#Proxima Nova"
-                 FontWeight="Bold"
-               />
+        </Grid.RowDefinitions>        
         <!--Text="{Binding , StringFormat={}{0:ddd, MMMM dd}}"-->
         <TextBlock 
                   Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat={}{0:ddd MMM dd\, yyyy}}"
@@ -51,14 +40,16 @@
                 />
 
         <Border
-            Height="60"
-            Width="406"
+            Height="100"
+            Margin="575,0,0,10"
+            Grid.Row="1"
+            Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
-            Grid.Column="1"
-            Background="#0e1f29"
             CornerRadius="10"
-            Margin="423,0,0,10" Grid.Row="1">
+            Background="#0e1f29"
+            Padding="10">
+
 
 
             <StackPanel
@@ -69,36 +60,52 @@
     <Button x:Name="Home_Button"
             Style="{StaticResource MainButton}"
             Margin="10,0"
-            Click="Home_Button_Click">
-        <Image Source="/Resources/home_Button.png" Height="48" Width="59"/>
-    </Button>
+            Click="Home_Button_Click"
+            Width="80" Height="80">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                     <Image Source="/Resources/home_Button.png" Height="48" Width="48" Stretch="Uniform"/>
+                        <TextBlock Text="Home" Foreground="White" FontSize="12" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
 
     <Button x:Name="Entries_Button"
             Style="{StaticResource MainButton}"
             Margin="10,0"
-            Click="Entries_Button_Click">
-        <Image Source="/Resources/entries_button.png" Height="48" Width="59"/>
+            Click="Entries_Button_Click"
+            Width="80" Height="80">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="/Resources/entries_button.png" Height="48" Width="48" Stretch="Uniform"/>
+                        <TextBlock Text="Add Entry" Foreground="White" FontSize="12" HorizontalAlignment="Center"/>
+                    </StackPanel>
     </Button>
 
     <Button x:Name="RecentEntries_Button"
             Style="{StaticResource MainButton}"
             Margin="10,0"
-            Click="ViewRecentEntries_Button_Click">
-        <Image Source="/Resources/recent_entries_button.png" Height="48" Width="59"/>
+            Click="ViewRecentEntries_Button_Click"
+            Width="80" Height="80">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="/Resources/recent_entries_button.png" Height="48" Width="48"/>
+                        <TextBlock Text="View Entries" Foreground="White" FontSize="12" HorizontalAlignment="Center"/>
+                    </StackPanel>
     </Button>
 
-    <Button x:Name="Profile_Button"
+                <Button x:Name="Profile_Button"
             Style="{StaticResource MainButton}"
             Margin="10,0"
-            Click="Profile_Button_Click">
-        <Image Source="/Resources/profile_button.png" Height="48" Width="59"/>
-    </Button>
-</StackPanel>
+            Click="Profile_Button_Click"
+            Width="80" Height="80">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="/Resources/profile_button.png" Height="48" Width="59"/>
+                        <TextBlock Text="Profile" Foreground="White" FontSize="12" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
 
         </Border>
 
         <StackPanel 
-            Height="440"
+            Height="450"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Orientation="Horizontal"
@@ -121,7 +128,7 @@
 
                     <TextBlock 
                     Text= "Today,"
-                    FontSize="26"
+                    FontSize="21"
                     Foreground="White"
                     HorizontalAlignment="Center" 
                     FontFamily="/Fonts/#Proxima Nova"
@@ -144,7 +151,7 @@
             Background="{x:Null}" Grid.ColumnSpan="2"
             >
 
-                <Image Source="/Resources/burnedBackground.png" Height="420" Margin="-10, 0, 0, 0"/>
+                <Image Source="/Resources/burnedBackground.png" Height="420" Margin="0, -20, 0, 0"/>
 
 
             </Border>
