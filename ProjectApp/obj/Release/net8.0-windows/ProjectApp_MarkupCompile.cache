@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP
 C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\App.xaml
-61596961360
+7-1675553240
 
-11656026753
+1367566132
 204-2051334203
-FoodEntry.xaml;MainWindow.xaml;Profile.xaml;RecentEntriesWindow.xaml;Resources\CustomTemplates.xaml;SummaryWindow.xaml;
+AddActivityWindow.xaml;FoodEntry.xaml;MainWindow.xaml;Profile.xaml;RecentEntriesWindow.xaml;Resources\CustomTemplates.xaml;SummaryWindow.xaml;
 
 False
 

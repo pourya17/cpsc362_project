@@ -1,0 +1,16 @@
+[
+  {
+    "Name": "Chicken Breast",
+    "Calories": 165,
+    "Protein": 31,
+    "Carbs": 0,
+    "Fat": 3.6
+  },
+  {
+    "Name": "Rice",
+    "Calories": 130,
+    "Protein": 2.7,
+    "Carbs": 28,
+    "Fat": 0.3
+  }
+]

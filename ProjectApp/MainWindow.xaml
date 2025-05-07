@@ -73,10 +73,17 @@
             Margin="10,0"
             Click="Entries_Button_Click"
             Width="80" Height="80">
+                    <Button.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Add Food" Click="AddFood_Click"/>
+                            <MenuItem Header="Add Activity" Click="AddActivity_Click"/>
+                        </ContextMenu>
+                    </Button.ContextMenu>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="/Resources/entries_button.png" Height="48" Width="48" Stretch="Uniform"/>
                         <TextBlock Text="Add Entry" Foreground="White" FontSize="12" HorizontalAlignment="Center"/>
                     </StackPanel>
+        
     </Button>
 
     <Button x:Name="RecentEntries_Button"
@@ -335,57 +342,54 @@
 
         </Border>
 
-        <!--RECENT CONSUMED-->
 
-        <Border
-            Height="650"
-            Width="390"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Center"
-            Grid.Column="1"
-            Grid.Row="1"
-            CornerRadius="10"
-            Margin="30, 0, 30, 0"
-            Background="#0e1f29" Grid.ColumnSpan="2"
-            >
 
-            <StackPanel
-                
-                >
+        <Border 
+    Height="650"
+    Width="390"
+    HorizontalAlignment="Right"
+    VerticalAlignment="Center"
+    Grid.Column="1"
+    Grid.Row="1"
+    CornerRadius="10"
+    Margin="30, 0, 30, 0"
+    Background="#0e1f29" Grid.ColumnSpan="2">
+
+            <StackPanel>
                 <TextBox
-                x:Name="SearchBox"
-                Height="50"
-                Template="{StaticResource DataBox}"
-                Width="340"
-                VerticalAlignment="Top"
-                Margin="15"
-                GotFocus="Search_Focus"
-                LostFocus="Search_LostFocus"
-                Text="Search..."
-                TextAlignment="Center"
-                Background="#FF0B1921"
-                BorderBrush="White"
-                BorderThickness="1"
-                Foreground="#c0cad4"
-                FontSize="30"/>
+            x:Name="SearchBox"
+            Height="50"
+            Template="{StaticResource DataBox}"
+            Width="340"
+            VerticalAlignment="Top"
+            Margin="15"
+            GotFocus="Search_Focus"
+            LostFocus="Search_LostFocus"
+            Text="Search..."
+            TextAlignment="Center"
+            Background="#FF0B1921"
+            BorderBrush="White"
+            BorderThickness="1"
+            Foreground="#c0cad4"
+            FontSize="30"/>
 
                 <ListBox
-                    Height="545"
-                    Width="380"
-                    Background="#FF0B1921"
-                    Margin="0, 20, 0, 0"
-                    Padding="0, 5"
-                    BorderThickness="1"
-                    
-                    >
+            x:Name="PresetsListBox"
+            Height="545"
+            Width="380"
+            Background="#FF0B1921"
+            Margin="0, 20, 0, 0"
+            Padding="0, 5"
+            BorderThickness="1"
+            DisplayMemberPath="Name"  />
 
-                </ListBox>
 
             </StackPanel>
 
-
         </Border>
 
+
+        <!--RECENT CONSUMED-->
         <Border
             Height="280"
             x:Name="Recent_Consumed"
@@ -467,82 +471,80 @@
         <!--RECENT BURNED-->
 
         <Border
-            Height="280"
-            x:Name="Recent_Burned"
-            Width="330"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Grid.Column="1"
-            Grid.Row="1"
-            CornerRadius="10"
-            Margin="170, 370, 0, 0"
-            Background="#0e1f29"
-            
-            >
+    Height="280"
+    x:Name="Recent_Burned"
+    Width="330"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"
+    Grid.Column="1"
+    Grid.Row="1"
+    CornerRadius="10"
+    Margin="170, 370, 0, 0"
+    Background="#0e1f29"
+    >
 
             <StackPanel
-                Height="{Binding ElementName=Recent_Consumed, Path=Height}"
-                Orientation="Vertical"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                >
+        Height="{Binding ElementName=Recent_Burned, Path=Height}"
+        Orientation="Vertical"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
 
                 <TextBlock
-                Height="30"
-                Width="{Binding ElementName=Recent_Consumed, Path=Width}"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                Text="Recent"
-                FontFamily="/Fonts/#Proxima Nova"
-                FontWeight="Bold"
-                Foreground="White"
-                TextAlignment="Center"
-                FontSize="30"
-                Margin="10"
-               />
+            Height="30"
+            Width="{Binding ElementName=Recent_Burned, Path=Width}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Text="Recent Activities"
+            FontFamily="/Fonts/#Proxima Nova"
+            FontWeight="Bold"
+            Foreground="White"
+            TextAlignment="Center"
+            FontSize="30"
+            Margin="10"
+        />
 
                 <TextBlock
-                Height="35"
-                x:Name="RecentB_1"
-                Width="{Binding ElementName=Recent_Consumed, Path=Width}"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                Text="Running     140 cal"
-                FontFamily="/Fonts/#Proxima Nova"
-                Foreground="#c0cad4"
-                TextAlignment="Center"
-                FontSize="30"
-                Margin="10"/>
+            Height="35"
+            x:Name="RecentB_1"
+            Width="{Binding ElementName=Recent_Burned, Path=Width}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Text="Running     140 cal"
+            FontFamily="/Fonts/#Proxima Nova"
+            Foreground="#c0cad4"
+            TextAlignment="Center"
+            FontSize="30"
+            Margin="10"/>
 
                 <TextBlock
-                Height="35"
-                x:Name="RecentB_2"
-                Width="{Binding ElementName=Recent_Consumed, Path=Width}"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                Text="Running     140 cal"
-                FontFamily="/Fonts/#Proxima Nova"
-                Foreground="#c0cad4"
-                TextAlignment="Center"
-                FontSize="30"
-                Margin="10"/>
+            Height="35"
+            x:Name="RecentB_2"
+            Width="{Binding ElementName=Recent_Burned, Path=Width}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Text="Running     140 cal"
+            FontFamily="/Fonts/#Proxima Nova"
+            Foreground="#c0cad4"
+            TextAlignment="Center"
+            FontSize="30"
+            Margin="10"/>
 
                 <TextBlock
-                Height="35"
-                x:Name="RecentB_3"
-                Width="{Binding ElementName=Recent_Consumed, Path=Width}"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                Text="Running     140 cal"
-                FontFamily="/Fonts/#Proxima Nova"
-                Foreground="#c0cad4"
-                TextAlignment="Center"
-                FontSize="30"
-                Margin="10"/>
-
+            Height="35"
+            x:Name="RecentB_3"
+            Width="{Binding ElementName=Recent_Burned, Path=Width}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Text="Running     140 cal"
+            FontFamily="/Fonts/#Proxima Nova"
+            Foreground="#c0cad4"
+            TextAlignment="Center"
+            FontSize="30"
+            Margin="10"/>
             </StackPanel>
 
         </Border>
+
 
     </Grid>
 

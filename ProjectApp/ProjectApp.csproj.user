@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AddActivityWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="FoodEntry.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

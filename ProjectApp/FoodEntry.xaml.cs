@@ -11,6 +11,29 @@ namespace ProjectApp
         {
             InitializeComponent();
         }
+        private void SavePresetButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!int.TryParse(CaloriesTextBox.Text, out int cal) ||
+                !int.TryParse(ProteinTextBox.Text, out int pro) ||
+                !int.TryParse(CarbsTextBox.Text, out int carb) ||
+                !int.TryParse(FatTextBox.Text, out int fat))
+            {
+                MessageBox.Show("Please enter valid numbers for calories and macronutrients.", "Input Error");
+                return;
+            }
+
+            var preset = new PresetFood
+            {
+                Name = FoodNameTextBox.Text.Trim(),
+                Calories = cal,
+                Protein = pro,
+                Carbs = carb,
+                Fat = fat
+            };
+
+            PresetManager.SavePreset(preset);
+            MessageBox.Show($"{preset.Name} saved to presets.", "Preset Saved");
+        }
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {

@@ -134,9 +134,12 @@ C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\bin\Release\net8.0-windo
 C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\bin\Release\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\bin\Release\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\obj\Release\net8.0-windows\ProjectApp.csproj.AssemblyReference.cache
+C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\obj\Release\net8.0-windows\AddActivityWindow.baml
 C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\obj\Release\net8.0-windows\FoodEntry.baml
 C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\obj\Release\net8.0-windows\RecentEntriesWindow.baml
+C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\obj\Release\net8.0-windows\Resources\CustomTemplates.baml
 C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\obj\Release\net8.0-windows\SummaryWindow.baml
+C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\obj\Release\net8.0-windows\AddActivityWindow.g.cs
 C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\obj\Release\net8.0-windows\FoodEntry.g.cs
 C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\obj\Release\net8.0-windows\MainWindow.g.cs
 C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\obj\Release\net8.0-windows\Profile.g.cs
@@ -160,4 +163,3 @@ C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\obj\Release\net8.0-windo
 C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\obj\Release\net8.0-windows\ProjectApp.pdb
 C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\obj\Release\net8.0-windows\ProjectApp.genruntimeconfig.cache
 C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\obj\Release\net8.0-windows\ref\ProjectApp.dll
-C:\Users\Duckie\Source\Repos\cpsc362_project\ProjectApp\obj\Release\net8.0-windows\Resources\CustomTemplates.baml

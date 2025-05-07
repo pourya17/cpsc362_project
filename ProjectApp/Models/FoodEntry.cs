@@ -16,4 +16,13 @@ namespace ProjectApp.Models
         public int Carbs { get; set; }
         public DateTime Date { get; set; } = DateTime.Now;
     }
+    public class ActivityEntry
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int CaloriesBurned { get; set; }
+        public DateTime Date { get; set; } = DateTime.Now;
+    }
+    
+
 }
