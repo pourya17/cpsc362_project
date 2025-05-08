@@ -122,46 +122,82 @@
             >
 
             <Border
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Grid.Column="0"
-            Grid.Row="1"
-            CornerRadius="10"
-            Background="{x:Null}" Grid.ColumnSpan="2"
-            >
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"
+    Grid.Column="0"
+    Grid.Row="1"
+    CornerRadius="10"
+    Background="{x:Null}"
+    Grid.ColumnSpan="2">
 
-                <StackPanel Orientation="Vertical">
+                <Grid>
+                    <!-- Background Image -->
                     <Image Source="/Resources/consumedBackground.png" Height="420"/>
 
+                    <!-- Overlay for Circular Progress -->
+                    <Canvas Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0">
+                        <!-- Circle background -->
+                        <Ellipse Width="200" Height="200" Stroke="#444" StrokeThickness="10"/>
+
+                        <!-- Arc progress path -->
+                        <Path x:Name="ProgressArc" Stroke="LightGreen" StrokeThickness="10" Fill="Transparent"/>
+
+                        <!-- Calorie text inside the circle -->
+                        <TextBlock x:Name="CalorieText"
+                       Width="200"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Foreground="White"
+                       FontWeight="Bold"
+                       Canvas.Top="85"/>
+                    </Canvas>
+
+                    <!-- Text below -->
                     <TextBlock 
-                    Text= "Today,"
-                    FontSize="21"
-                    Foreground="White"
-                    HorizontalAlignment="Center" 
-                    FontFamily="/Fonts/#Proxima Nova"
-                    FontWeight="Bold"
-                    />
-
-                </StackPanel>
-                
-                
-
-
+            Text=","
+            FontSize="21"
+            Foreground="White"
+            HorizontalAlignment="Center" 
+            FontFamily="/Fonts/#Proxima Nova"
+            FontWeight="Bold"
+            VerticalAlignment="Bottom"
+            Margin="0,0,0,0"/>
+                </Grid>
             </Border>
+
 
             <Border
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Grid.Column="0"
-            Grid.Row="1"
-            CornerRadius="10"
-            Background="{x:Null}" Grid.ColumnSpan="2"
-            >
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"
+    Grid.Column="0"
+    Grid.Row="1"
+    CornerRadius="10"
+    Background="{x:Null}"
+    Grid.ColumnSpan="2">
 
-                <Image Source="/Resources/burnedBackground.png" Height="420" Margin="0, -20, 0, 0"/>
+                <Grid>
+                    <!-- Background Image -->
+                    <Image Source="/Resources/burnedBackground.png" Height="420" Margin="0, 00, 0, 0"/>
 
+                    <!-- Solid Ring -->
+                    <Canvas Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0">
+                        <!-- Outer ring -->
+                        <Ellipse Width="200" Height="200" Stroke="OrangeRed" StrokeThickness="12" Fill="Transparent"/>
 
+                        <!-- Center text -->
+                        <TextBlock x:Name="BurnedCaloriesText"
+                       Width="200"
+                       TextAlignment="Center"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       Canvas.Top="85"
+                       Text="-550 cal"/>
+                    </Canvas>
+                </Grid>
             </Border>
+
 
 
         </StackPanel>
@@ -228,7 +264,7 @@
                 Width="70"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Text="99%"
+                Text="45%"
                 FontFamily="/Fonts/#Proxima Nova"
                 Foreground="LightGreen"
                 TextAlignment="Right"
@@ -265,7 +301,7 @@
                 Width="70"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Text="100%"
+                Text="70%"
                 Foreground="LightGreen"
                 TextAlignment="Right"
                 FontFamily="/Fonts/#Proxima Nova"
@@ -301,7 +337,7 @@
                 Width="70"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Text="99%"
+                Text="62%"
                 Foreground="LightGreen"
                 TextAlignment="Right"
                 FontFamily="/Fonts/#Proxima Nova"
@@ -374,14 +410,34 @@
             FontSize="30"/>
 
                 <ListBox
-            x:Name="PresetsListBox"
-            Height="545"
-            Width="380"
-            Background="#FF0B1921"
-            Margin="0, 20, 0, 0"
-            Padding="0, 5"
-            BorderThickness="1"
-            DisplayMemberPath="Name"  />
+    x:Name="PresetsListBox"
+    Height="545"
+    Width="380"
+    Background="#FF0B1921"
+    Margin="0, 20, 0, 0"
+    Padding="0, 5"
+    BorderThickness="1"
+    ItemsSource="{Binding Presets}">
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="5">
+                                <TextBlock 
+                    Text="{Binding Name}" 
+                    FontSize="24"
+                    Foreground="White"
+                    VerticalAlignment="Center"
+                    Width="250"/>
+                                <Button 
+                    Content="Save"
+                    Width="80"
+                    Margin="10,0,0,0"
+                    Click="SavePreset_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
 
 
             </StackPanel>

@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\presets.json" />
     <None Remove="Fonts\proximanova_black.ttf" />
     <None Remove="Fonts\proximanova_bold.otf" />
     <None Remove="Fonts\proximanova_regular.ttf" />
@@ -19,6 +20,12 @@
     <None Remove="Resources\profile_Button.png" />
     <None Remove="Resources\recent_entries_button.png" />
     <None Remove="Resources\test.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\presets.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

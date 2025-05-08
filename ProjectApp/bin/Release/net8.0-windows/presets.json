@@ -7,10 +7,52 @@
     "Fat": 0
   },
   {
-    "Name": "Apple",
+    "Name": "Chicken Tender",
     "Calories": 130,
-    "Protein": 1,
-    "Carbs": 34,
+    "Protein": 13,
+    "Carbs": 0,
+    "Fat": 2
+  },
+  {
+    "Name": "Chicken Breast",
+    "Calories": 165,
+    "Protein": 31,
+    "Carbs": 0,
+    "Fat": 3
+  },
+  {
+    "Name": "Rice",
+    "Calories": 130,
+    "Protein": 2,
+    "Carbs": 28,
     "Fat": 0
+  },
+  {
+    "Name": "Avocado",
+    "Calories": 50,
+    "Protein": 0,
+    "Carbs": 3,
+    "Fat": 0
+  },
+  {
+    "Name": "Steak",
+    "Calories": 250,
+    "Protein": 25,
+    "Carbs": 0,
+    "Fat": 10
+  },
+  {
+    "Name": "Salmon",
+    "Calories": 121,
+    "Protein": 17,
+    "Carbs": 0,
+    "Fat": 5
+  },
+  {
+    "Name": "Granola Bar",
+    "Calories": 200,
+    "Protein": 5,
+    "Carbs": 25,
+    "Fat": 4
   }
 ]

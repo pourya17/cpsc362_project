@@ -7,23 +7,128 @@ using System.Windows.Navigation;
 using Newtonsoft.Json;
 using ProjectApp.Models;
 using ProjectApp.Data;
+using System.IO;
+
 
 namespace ProjectApp
 {
     public partial class MainWindow : Window
     {
         private readonly FoodDatabase _foodDatabase;
+        string PresetsFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "presets.json");
+
+
+
+
         public MainWindow()
         {
             InitializeComponent();
             _foodDatabase = new FoodDatabase();
             Loaded += MainWindow_Loaded;
 
+            LoadPresets();
         }
+
+        private void LoadPresets()
+        {
+            // Use this to find the file path for presets
+            // MessageBox.Show("Looking for: " + PresetsFilePath);
+
+            if (File.Exists(PresetsFilePath))
+            {
+                string json = File.ReadAllText(PresetsFilePath);
+                List<PresetFood> presets = Newtonsoft.Json.JsonConvert.DeserializeObject<List<PresetFood>>(json);
+                PresetsListBox.ItemsSource = presets;
+            }
+            else
+            {
+                MessageBox.Show("Preset file not found!", "Error");
+            }
+        }
+
+        private void SavePreset_Click(object sender, RoutedEventArgs e)
+        {
+            // Get the selected preset from the ListBox
+            PresetFood selectedPreset = (PresetFood)PresetsListBox.SelectedItem;
+
+            if (selectedPreset != null)
+            {
+                // Convert the selected preset into a FoodEntry object
+                FoodEntry newEntry = new FoodEntry
+                {
+                    Name = selectedPreset.Name,
+                    Calories = selectedPreset.Calories,
+                    Protein = selectedPreset.Protein,
+                    Carbs = selectedPreset.Carbs,
+                    Fat = selectedPreset.Fat
+                };
+
+                // Save the new FoodEntry to the database or add it to your collection
+                var db = new FoodDatabase(); // Assuming you have a FoodDatabase class for saving
+                db.AddFoodEntry(newEntry); // This is where you save the food entry (you may need to adjust this depending on how your database is structured)
+
+                // Optionally, show a summary window like in the SubmitButton_Click method
+                string summary = $"Food: {newEntry.Name}\n" +
+                                 $"Calories: {newEntry.Calories}\n" +
+                                 $"Protein: {newEntry.Protein}g\n" +
+                                 $"Fat: {newEntry.Fat}g\n" +
+                                 $"Carbs: {newEntry.Carbs}g";
+
+                // Show a confirmation window
+                SummaryWindow summaryWindow = new SummaryWindow(summary);
+                summaryWindow.ShowDialog();
+            }
+            else
+            {
+                // If no preset is selected, show an error message
+                MessageBox.Show("Please select a preset food to add.", "Error");
+            }
+        }
+
+        private void UpdateCalorieProgress(double currentCalories, double goalCalories)
+        {
+            double percentage = currentCalories / goalCalories;
+            double angle = 360 * percentage;
+            double radius = 90;
+            double centerX = 100;
+            double centerY = 100;
+
+            double radians = (Math.PI / 180) * angle;
+            double x = centerX + radius * Math.Sin(radians);
+            double y = centerY - radius * Math.Cos(radians);
+
+            bool isLargeArc = angle > 180;
+
+            var arcSegment = new ArcSegment
+            {
+                Point = new Point(x, y),
+                Size = new Size(radius, radius),
+                IsLargeArc = isLargeArc,
+                SweepDirection = SweepDirection.Clockwise
+            };
+
+            var pathFigure = new PathFigure
+            {
+                StartPoint = new Point(centerX, centerY - radius),
+                Segments = new PathSegmentCollection { arcSegment }
+            };
+
+            var pathGeometry = new PathGeometry
+            {
+                Figures = new PathFigureCollection { pathFigure }
+            };
+
+            ProgressArc.Data = pathGeometry;
+            CalorieText.Text = $"{currentCalories}/{goalCalories} cal";
+        }
+
+
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             try
             {
+                UpdateCalorieProgress(950, 2000); // Example: 750 calories of 2000
+
                 // Recent Food Entries
                 var recentEntries = _foodDatabase.GetRecentEntries(3);
                 while (recentEntries.Count < 3)

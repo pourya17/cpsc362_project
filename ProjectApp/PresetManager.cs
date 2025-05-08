@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using System.Windows;
 
 namespace ProjectApp
 {
@@ -21,36 +22,37 @@ namespace ProjectApp
 
         public static void SavePreset(PresetFood preset)
         {
-            // Define the path to the presets.json file within the Data folder
-            string presetsFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "presets.json");
+            string folder = Path.Combine(Directory.GetCurrentDirectory(), "Data");
+            string path = Path.Combine(folder, "presets.json");
 
-            // Ensure the Data folder exists
-            if (!Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), "Data")))
+            try
             {
-                Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "Data"));
+                if (!Directory.Exists(folder))
+                    Directory.CreateDirectory(folder);
+
+                List<PresetFood> presets;
+                if (File.Exists(path))
+                {
+                    string json = File.ReadAllText(path);
+                    presets = JsonSerializer.Deserialize<List<PresetFood>>(json) ?? new List<PresetFood>();
+                }
+                else
+                {
+                    presets = new List<PresetFood>();
+                }
+
+                presets.Add(preset);
+                string updatedJson = JsonSerializer.Serialize(presets, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(path, updatedJson);
+
+                MessageBox.Show("Preset saved to:\n" + path); // Optional debug
             }
-
-            List<PresetFood> foodPresets;
-
-            if (File.Exists(presetsFilePath))
+            catch (Exception ex)
             {
-                // Read the current presets from the file
-                var jsonData = File.ReadAllText(presetsFilePath);
-                foodPresets = JsonSerializer.Deserialize<List<PresetFood>>(jsonData);
+                MessageBox.Show("Failed to save preset: " + ex.Message, "Error");
             }
-            else
-            {
-                // If the file doesn't exist, start with a new list
-                foodPresets = new List<PresetFood>();
-            }
-
-            // Add the new preset to the list
-            foodPresets.Add(preset);
-
-            // Serialize the list of presets and save it back to the file
-            var updatedJsonData = JsonSerializer.Serialize(foodPresets, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(presetsFilePath, updatedJsonData);
         }
+
 
     }
 }

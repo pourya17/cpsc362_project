@@ -23,6 +23,14 @@ namespace ProjectApp.Models
         public int CaloriesBurned { get; set; }
         public DateTime Date { get; set; } = DateTime.Now;
     }
-    
+    public class PresetFood
+    {
+        public string Name { get; set; }
+        public int Calories { get; set; }
+        public int Protein { get; set; }
+        public int Carbs { get; set; }
+        public int Fat { get; set; }
+    }
+
 
 }
